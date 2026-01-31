@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BookMarket | 도서 목록</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/BookMarket/css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="container navbar-content">
+            <a href="/BookMarket/home" class="brand">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    class="bi bi-book-half" viewBox="0 0 16 16">
+                    <path
+                        d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                </svg>
+                BookMarket
+            </a>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        <div class="p-5 mb-4 bg-body-tertiary rounded-3 text-center border">
+            <div class="container-fluid py-2">
+                <h1 class="display-6 fw-bold">도서 목록</h1>
+                <p class="fs-5 text-muted">엄선된 도서들을 만나보세요.</p>
+            </div>
+        </div>
+
+        <div class="book-grid">
+            <div class="book-card" th:each="book : ${bookList}">
+                <img th:src="'/BookMarket/images/' + ${book.filename}" th:alt="${book.name}"
+                    style="width: 100%; height: 280px; object-fit: cover; border-radius: 0.75rem 0.75rem 0 0;">
+                <div class="card-body">
+                    <div class="book-meta">
+                        <span th:text="${book.category} ?: '기타'">분류</span>
+                        <span>•</span>
+                        <span th:text="${book.author}">저자</span>
+                    </div>
+                    <h3 class="book-title" th:text="${book.name}">제목</h3>
+                    <p class="book-desc" th:text="${book.description}">설명...</p>
+
+                    <div class="book-footer">
+                        <span class="price"
+                            th:text="${#numbers.formatInteger(book.unitPrice, 0, 'COMMA')} + '원'">가격</span>
+                        <a th:href="'/BookMarket/books/book?id=' + ${book.bookId}" class="btn btn-primary"
+                            role="button">상세보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2024 BookMarket. All rights reserved.</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

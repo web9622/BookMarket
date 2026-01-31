@@ -1,0 +1,58 @@
+> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.6)
+
+2026-01-31T12:58:33.682+09:00  INFO 29140 --- [BookMarket] [           main] com.springboot.BookMarketApplication     : Starting BookMarketApplication using Java 21.0.2 with PID 29140 (D:\SpringBoot\BookMarket\BookMarket\build\classes\java\main started by gram in D:\SpringBoot\BookMarket\BookMarket)
+2026-01-31T12:58:33.685+09:00  INFO 29140 --- [BookMarket] [           main] com.springboot.BookMarketApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-01-31T12:58:34.902+09:00  INFO 29140 --- [BookMarket] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8086 (http)
+2026-01-31T12:58:34.934+09:00  INFO 29140 --- [BookMarket] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-31T12:58:34.934+09:00  INFO 29140 --- [BookMarket] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2026-01-31T12:58:35.002+09:00  INFO 29140 --- [BookMarket] [           main] o.a.c.c.C.[.[localhost].[/BookMarket]    : Initializing Spring embedded WebApplicationContext
+2026-01-31T12:58:35.004+09:00  INFO 29140 --- [BookMarket] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1249 ms
+2026-01-31T12:58:35.494+09:00  WARN 29140 --- [BookMarket] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-01-31T12:58:35.511+09:00  INFO 29140 --- [BookMarket] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-01-31T12:58:35.531+09:00 ERROR 29140 --- [BookMarket] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8086 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8086 or configure this application to listen on another port.
+
+
+> Task :bootRun FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command 'C:\Program Files\Java\jdk-21.0.2\bin\java.exe'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 4s
+4 actionable tasks: 1 executed, 3 up-to-date
