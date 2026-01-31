@@ -1,7 +1,8 @@
 
 ```markdown
 # 📚 BookMarket (도서 관리 시스템)
-bookmarket-production-2ef4.up.railway.app/BookMarket
+railway에 배포하였고 sleep 상태이므로, 처음 실행시 시간이 조금 걸립니다. 
+[배포 접속 주소] bookmarket-production-2ef4.up.railway.app/BookMarket
 Spring Boot를 기반으로 한 도서 관리 및 온라인 마켓 애플리케이션 프로젝트입니다.
 
 ## 🛠️ 기술 스택 (Tech Stack)
